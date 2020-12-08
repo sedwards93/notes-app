@@ -26,7 +26,7 @@
   function instantiatedNoteListObject() {
     var noteList = new NoteList();
     console.log('instantiatedNoteListObject')
-    assert.isTrue(typeof noteList == "object")
+    assert.isTrue(typeof noteList === "object")
   };
   instantiatedNoteListObject();
 })();
@@ -35,7 +35,7 @@
   function instantiatedWithEmptyArray() {
     var noteList = new NoteList();
     console.log('instantiatedWithEmptyArray')
-    assert.toEqual(noteList.listNotes(), Array.isArray())
+    assert.isTrue(noteList.listNotes() == Array.isArray())
   };
   instantiatedWithEmptyArray();
 })();
