@@ -24,7 +24,7 @@ class NoteListModel {
 
   createNote(text){
     var note = new Note(text);
-    this.list.push(note);
+    this.addNote(note);
   };
 
 }

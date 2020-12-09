@@ -1,6 +1,12 @@
-function changeGreeting(text) {
-  var tag = (document.getElementById("app").innerHTML = text);
-  console.log(tag)
-}
+'use strict';
 
-changeGreeting("Howdy");
+console.log("hi")
+
+var noteListView = new NoteListView
+var element = document.getElementById("app");
+noteListView.viewNoteListModel().createNote("Hello");
+noteListView.viewNoteListModel().createNote("Hi");
+
+var noteController = new NoteController(noteListView, element)
+
+noteController.updateHTML();
