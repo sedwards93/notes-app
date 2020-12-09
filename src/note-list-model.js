@@ -1,13 +1,32 @@
 'use strict';
 
-class NoteList {
+class NoteListModel {
   constructor() {
     this.list = [];
-  }
+  };
 
   listNotes() {
-    return this.list
+    return this.list;
   }
+
+  printNotes() {
+    var notesToPrint = ""
+    var arrayLength = this.list.length;
+    for (var i = 0; i < arrayLength; i++) {
+      notesToPrint = notesToPrint + ((this.list[i]).text);
+    };
+    return notesToPrint;
+  };
+
+  addNote(note) {
+    this.list.push(note);
+  };
+
+  createNote(text){
+    var note = new Note(text);
+    this.list.push(note);
+  };
+
 }
 
   

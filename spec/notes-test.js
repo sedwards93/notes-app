@@ -2,40 +2,13 @@
 
 // notes.js
 
-(function() {
-  function instantiatedNoteObject() {
-    var note = new Note();
-    console.log('instantiatedNoteObject')
-    assert.isTrue(typeof note == "object")
-  };
-  instantiatedNoteObject();
-})();
 
-(function() {
-  function instantiatedWithText() {
-    var note = new Note("text");
-    console.log('instantiatedWithText')
-    assert.toEqual("text", note.getText())
-  };
-  instantiatedWithText();
-})();
+it('note is an instance of Note', function() {
+  var note = new Note();
+  expect(note instanceof Note).toBeTrue();
+});
 
-// note-list-model.js
-
-(function() {
-  function instantiatedNoteListObject() {
-    var noteList = new NoteList();
-    console.log('instantiatedNoteListObject')
-    assert.isTrue(typeof noteList === "object")
-  };
-  instantiatedNoteListObject();
-})();
-
-(function() {
-  function instantiatedWithEmptyArray() {
-    var noteList = new NoteList();
-    console.log('instantiatedWithEmptyArray')
-    assert.isTrue(noteList.listNotes() == Array.isArray())
-  };
-  instantiatedWithEmptyArray();
-})();
+it('Note object is instantiated with text', function() {
+  var note = new Note('text');
+  expect(note.getText()).toEqual('text');
+});
